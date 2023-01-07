@@ -1,0 +1,56 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DevOps-adf-01"
+		},
+		"AzureDataLakeStoragedev_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://devopsstrorageaccount01.dfs.core.windows.net"
+		},
+		"AzureKeyVaultdev_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://devopskeyvault0001.vault.azure.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "DevOps-adf-01_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureKeyVaultdev_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVaultdev_properties_typeProperties_baseUrl')]"
+					},
+					"AzureDataLakeStoragedev_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStoragedev_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
