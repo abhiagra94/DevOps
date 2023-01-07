@@ -1,0 +1,9 @@
+{
+	"name": "DevOps-adf-01",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "78067f54-4e81-41fa-80b5-2282389ffdf0",
+		"tenantId": "078c42a9-920c-453e-904d-c02b3a6736ea"
+	}
+}
