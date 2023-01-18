@@ -7,9 +7,21 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "DevOps-adf-01"
 		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
 		"AzureDataLakeStoragedev_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://devopsstrorageaccount01.dfs.core.windows.net"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0111-183534-l1urg7uv"
 		},
 		"AzureKeyVaultdev_properties_typeProperties_baseUrl": {
 			"type": "string",
@@ -41,6 +53,15 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
+					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 					},
 					"AzureKeyVaultdev_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVaultdev_properties_typeProperties_baseUrl')]"

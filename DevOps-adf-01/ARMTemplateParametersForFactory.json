@@ -5,8 +5,17 @@
 		"factoryName": {
 			"value": "DevOps-adf-01"
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
 		"AzureDataLakeStoragedev_properties_typeProperties_url": {
 			"value": "https://devopsstrorageaccount01.dfs.core.windows.net"
+		},
+		"AzureDatabricks1_properties_typeProperties_existingClusterId": {
+			"value": "0111-183534-l1urg7uv"
 		},
 		"AzureKeyVaultdev_properties_typeProperties_baseUrl": {
 			"value": "https://devopskeyvault0001.vault.azure.net/"
